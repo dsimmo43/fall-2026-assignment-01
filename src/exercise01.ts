@@ -3,5 +3,8 @@ export function formatName(
   lastName: string,
   middleName?: string | null,
 ): string {
-  return '';
+  if (middleName === null || middleName === undefined || middleName.trim() === '') {
+    return `${lastName}, ${firstName}`;
+  }
+  return `${lastName}, ${firstName} ${middleName[0]}.`;
 }
